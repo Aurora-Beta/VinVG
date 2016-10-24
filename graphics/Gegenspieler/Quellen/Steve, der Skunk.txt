@@ -1,0 +1,8 @@
+[Name]
+Steve, der Skunk
+
+[Bild]
+Steve.png
+
+[Beschreibung]
+Wenig motiviert und entschlussfreudig überhaupt irgendetwas anzugehen. Sollte ihn aber dennoch ein Mal das Glück geküsst haben, so kann Steve ein unerwartet zielstrebiger Gegenspieler sein!
