@@ -10,8 +10,7 @@ class menü(object):
 		self.surface = screen
 		self.r = renderer
 		self.bgcolor = bgcolor
-		self.Menühintergrund = self.r.get_image("Menu_Hintergrundbild",
-												"Bilder/Menu/Hintergrund.png")
+		self.Menühintergrund = self.r.get_image("Menu_Hintergrundbild",	"graphics/Menu/Hintergrund.png")
 		self.Aktuelles_Menü = ""
 		self.Aktuelle_Menükategorie = ""
 		self.Menü_gezeichnet = False
@@ -28,28 +27,28 @@ class menü(object):
 		# Buttons
 		self.Menü_Buttons = []
 		self.Button_Info = Button(			Name="Info", 
-											Pfad="Bilder/Menu/Info.png",
+											Pfad="graphics/Menu/Info.png",
 											Position=self.Menü_Position_Knopf_1,
 											Renderer=self.r,
 											Funktion=self.Menü_Info)
 									
 		self.Button_Fahrzeuge = Button(		Name="Fahrzeuge",
-											Pfad="Bilder/Menu/Fahrzeuge.png",
+											Pfad="graphics/Menu/Fahrzeuge.png",
 											Position=self.Menü_Position_Knopf_2,
 											Renderer=self.r)
 										
 		self.Button_Linien = Button(		Name="Linien",
-											Pfad="Bilder/Menu/Linien.png",
+											Pfad="graphics/Menu/Linien.png",
 											Position=self.Menü_Position_Knopf_3,
 											Renderer=self.r)
 										
 		self.Button_Haltestellen = Button(	Name="Haltestellen",
-											Pfad="Bilder/Menu/Haltestelle.png",
+											Pfad="graphics/Menu/Haltestelle.png",
 											Position=self.Menü_Position_Knopf_4,
 											Renderer=self.r)
 		
 		self.Button_Einstellungen = Button(	Name="Einstellungen",
-											Pfad="Bilder/Menu/Einstellungen.png",
+											Pfad="graphics/Menu/Einstellungen.png",
 											Position=self.Menü_Position_Knopf_5,
 											Renderer=self.r)
 		

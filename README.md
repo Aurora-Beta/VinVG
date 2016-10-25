@@ -1,7 +1,7 @@
 # VinVG is not VerkehrsGigant
 
 My first try at programming a game by reprogramming an rather old traffic management game called "TrafficGiant" or on German "VerkehrsGigant".
-This project is in pure prototype stage as i barely started to learn things on my own.
+This project is in pure prototype stage as i barely started to create and learn things on my own.
 
 ![Screenshot](/docs/latest.png)
 
@@ -14,25 +14,35 @@ This project is in pure prototype stage as i barely started to learn things on m
   - Created a GitHub-account and this project :^)
 
 ## What needs to be done:
-  - A whole lot of logic:
-    - cross roads
-    - sprites movement
-    - multiple layers of graphs
-    - collision detection
-    - mouse handling
-    - buttons
-    - graphics
+  - A whole lot of game logic:
+    - Cross roads
+    - Collision detection
+    - Passengers
+
+  - Game engine:
+    - Multiple layers of graphs
+    - Mouse handling
+    - Buttons and menus
+    - Graphics
+    - Sprites movement
+    - Zooming
+    - Key bindings
     - ...
 
-## Requirements to run
+  - Designing
+    - Levels
+    - Maps
+    - Sprites
 
+## Requirements to run
   - Python3
-  - pygame compiled for Python3
+  - pygame compiled for python3
 
 ## How to run?
 
 Simply execute:
+```shell
 python3 main.py
-
+```
 
 Any one can contribute if they're willing to - i'm very happy and eager to learn new stuff :-)

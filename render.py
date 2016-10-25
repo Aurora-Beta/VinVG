@@ -106,7 +106,7 @@ class render(object):
 	#
 
 	def hintergrund(self):
-		"""" Rendert den Hintergrund. Wir generieren die Tile-Map und den Tile-Key,
+		""" Rendert den Hintergrund. Wir generieren die Tile-Map und den Tile-Key,
 		um die Hintergrundkarte zu rendern."""
 		tilekey = self.k.get_tilekey(ebene="Hintergrund")
 		tilemap = self.k.get_tilemap(ebene="Hintergrund")
@@ -114,7 +114,7 @@ class render(object):
 		self.draw(self.s, tilekey, tilemap)
 
 	def vordergrund(self):
-		"""" Rendert den Vordergrund. Wir generieren die Tile-Map und den Tile-Key,
+		""" Rendert den Vordergrund. Wir generieren die Tile-Map und den Tile-Key,
 		um die Hintergrundkarte zu rendern. """
 		tilekey = self.k.get_tilekey(ebene="Vordergrund")
 		tilemap = self.k.get_tilemap(ebene="Vordergrund")

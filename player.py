@@ -2,7 +2,7 @@
 
 
 
-class spieler(object):
+class player(object):
 	def __init__(self):
 		self.Kapital = 300000
 		self.Name = "Spieler"

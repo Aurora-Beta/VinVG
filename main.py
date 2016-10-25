@@ -4,26 +4,26 @@ from pygame.locals import *
 
 
 # Module im selben Verzeichnis
-import linien
-import fahrzeuge
+import lines
+import vehicles
 import render
 import menu
-import spieler
-import karte
+import player
+import map
 
 
 pygame.init()
 
 DISPLAYSURF = pygame.display.set_mode((800, 600), DOUBLEBUF)
-pygame.display.set_caption('Verkehrsmanager')
+pygame.display.set_caption('VinVG')
 pygame.mouse.set_visible(1)
 pygame.key.set_repeat(1, 30)
 FPSCLOCK = pygame.time.Clock()
 
-k = karte.karte("Testlevel1.map")
+k = map.karte("Testlevel1.map")
 r = render.render(k, DISPLAYSURF)
 m = menu.menü(DISPLAYSURF, r)
-s = spieler.spieler()
+s = player.player()
 
 
 # Hauptschleife

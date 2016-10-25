@@ -16,7 +16,7 @@ class karte(object):
 		self.tilemap_schwebebahn = []
 		self.tilemap_magnetschwebebahn = []
 		self.tilemap_fahrzeuge = []
-		self.kartendatei = "Missionen/" + dateiname
+		self.kartendatei = "missions/" + dateiname
 
 		self.tilekey_hintergrund = {}
 		self.tilekey_vordergrund = {}
