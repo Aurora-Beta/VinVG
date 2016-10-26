@@ -1,0 +1,8 @@
+[Name]
+Bommel
+
+[Picture]
+Bommel.png
+
+[Bio]
+Ein geschickter und recht bald auch nervtötender Konkurrent, trotz seines flauschigen Fells und Gemüts. Er merkt genau welche Strategien ihn zum Erfolg bringen und nutzt diese schamlos aus.
