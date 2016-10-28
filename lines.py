@@ -1,33 +1,33 @@
-# Linien
+# lines
 
 
-class Linien(object):
-	""" Das Objekt zur Linienverwaltung. """
+class lines(object):
+	""" Object which stores and manages all lines.  """
 
 	def __init__(self):
-		self.Linien = []
-		self.Haltestellen = []
+		self.lines = []
+		self.stops = []
 	
-	def get_Linien(self, typ="alle"):
+	def get_all_lines(self):
 		None
 
-	def get_Linie(self, Linien_ID):
+	def get_line(self, line_ID):
 		None
 
-	def add_Linie(self, Transportmittel="", Pfad=[]):
+	def add_line(self, transportation, path=[]):
 		None
 
-	def add_Haltestelle(self):
+	def add_stop(self):
 		None
 		
-	def get_Haltestellen_Schablone(self):
+	def get_stop_template(self):
 		temp = {}
-		temp[Haltestellen_ID] = self.get_Haltestellen_ID()
+		temp[stop_ID] = self.get_gen_stop_ID()
 
 
-class Linie(object):
-	""" Linienobjekt """
+class line(object):
+	""" linenobject """
 	def __init__(self):
-		self.Linien_ID = 0
-		self.Transportmittel = ""
-		self.Fahrzeuge = []
+		self.line_ID = 0
+		self.transportation = ""
+		self.vehicles = []
