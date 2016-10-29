@@ -1,4 +1,0 @@
-- Zoom
-- Menü
-- Fahrzeugbewegungen
-- Pfadberechnung

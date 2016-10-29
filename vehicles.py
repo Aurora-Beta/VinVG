@@ -1,61 +1,40 @@
 # Fahrzeuge
 
-class Fahrzeuge(object):
-	""" Die Klasse für die Fahrzeuge. """
+class all_vehicles(object):
+	""" This class inherits all vehicles. """
 	def __init__(self):
-		self.Liste_Fahrzeuge_im_Spiel = {}
-		self.Liste_Autos = {}
-		self.Liste_Verfügbare_Fahrzeuge = {}
-		self.Liste_Fahrzeuge_im_Depot = {}
+		self.all_npc_vehicles = {}	# Cars of inhabitants
+		self.vehicles_ingame = {}	# Vehicles in game
+		self.vehicles_standby = {}	# Vehicles in depot
 
-	def Fahrzeug_ID_generieren(self):
-		t = Self.Liste_Autos + Self.Liste_Fahrzeuge_im_Depot + Self.Liste_Fahrzeuge_im_Spiel
+	def gen_vehicle_id(self):
+	""" Generates an unique ID for vehicles. """
+		t = Self.all_npc_vehicles + Self.vehicles_ingame + Self.vehicles_standby
 		if(t):
-			zähler = 1
-			for Fahrzeuge in t:
-				id = Fahrzeuge["Fahrzeug_ID"]
-				if(id >= zähler):
-					zähler = id
-			return(zähler + 1)
+			counter = 1
+			for vehicles in t:
+				id = Vehicle["vehicle_id"]
+				if(id >= counter):
+					counter = id
+			return(counter + 1)
 		else:
 			return 1
 
 
-	def Fahrzeug_Kaufen(self, Fahrzeugmodell_ID):
-		self.Add_Fahrzeug(Fahrzeug)
-		None
 
-	def Add_Fahrzeug(self, Fahrzeug):
-		None
-	
-	def Del_Fahrzeug(self, Fahrzeug_ID):
-		None
-	
-	def Verkaufe_Fahrzeug(self, Fahrzeug_ID):
-		None
-	
-	def get_Fahrzeug(self, Fahrzeug_ID):
-		temp = self.Liste_Fahrzeuge_im_Depot + self.Liste_Fahrzeuge_im_Spiel
-		return temp[Fahrzeug_ID]
-	
-
-
-class Fahrzeug(object):
-	def __init__(self, Linie=None, Fahrzeug_Art_ID=0, Route=[]):
-		# Übergebene Parameter
-		self.Fahrzeug_Art_ID = Fahrzeug_Art_ID
-		self.Linie = Linie
-		self.Route = Route
+class Vehicle(object):
+	""" Object-class for every vehicle. """
+	def __init__(self, Line=None, Vehicle_class_ID=0):
+		# Parameters given
+		self.Vehicle_class_ID = Vehicle_class_ID
+		self.Line = Line
 		
-		# Implizite Parameter
-		self.Fahrzeug_ID = 0
-		self.Zustand = 100
-		self.Geschwindigkeit = 0
-		self.Sitzplätze = 0
-		self.Fahrgäste = {}
-		self.Datum_Gekauft = (0,0)
-		self.Voll = False
+		# Implicit or generated parameters
+		self.Vehicle_ID = 0
+		self.Condition = 100
+		self.Velocity = 0
+		self.Seats = 0
+		self.Passengers = {}
+		self.Date_buy = (0,0)
+		self.is_full = False
 	
-	def Einsteigen(self, Personen):
-		for Fahrgast in Personen:
-			self.Fahrgäste.append(Fahrgast)
