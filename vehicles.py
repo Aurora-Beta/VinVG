@@ -8,7 +8,7 @@ class all_vehicles(object):
 		self.vehicles_standby = {}	# Vehicles in depot
 
 	def gen_vehicle_id(self):
-	""" Generates an unique ID for vehicles. """
+		""" Generates an unique ID for vehicles. """
 		t = Self.all_npc_vehicles + Self.vehicles_ingame + Self.vehicles_standby
 		if(t):
 			counter = 1
