@@ -1,5 +1,5 @@
-[hintergrund]
-hintergrund = .........
+[background]
+background = .........
 		.........
 		111111...
 		<<<<<<<<<
@@ -9,8 +9,8 @@ hintergrund = .........
 		1|^1.....
 		1|^1.....
 
-[vordergrund]
-vordergrund = bbbbbb...
+[foreground]
+foreground = bbbbbb...
 		bbaaab...
 		.........
 		.........
@@ -22,51 +22,51 @@ vordergrund = bbbbbb...
 
 [.]
 Bezeichnung = Gras
-Pfad = graphics/Hintergrund/Gras.png
-Ebene = Hintergrund
+Pfad = graphics/background/grass/Gras.png
+Ebene = background
 
 [<]
 Bezeichnung = Straße-Gerade-Horizontal-Oben
-Pfad = graphics/Hintergrund/Straße-Horizontal-Oben.png
-Ebene = Hintergrund
+Pfad = graphics/background/streets/Straße-Horizontal-Oben.png
+Ebene = background
 
 [>]
 Bezeichnung = Straße-Gerade-Horizontal-Unten
-Pfad = graphics/Hintergrund/Straße-Horizontal-Unten.png
-Ebene = Hintergrund
+Pfad = graphics/background/streets/Straße-Horizontal-Unten.png
+Ebene = background
 
 [|]
 Bezeichnung = Straße-Gerade-Vertikal-Oben
-Pfad = graphics/Hintergrund/Straße-Vertikal-Oben.png
-Ebene = Hintergrund
+Pfad = graphics/background/streets/Straße-Vertikal-Oben.png
+Ebene = background
 
 [^]
 Bezeichnung = Straße-Gerade-Vertikal-Unten
-Pfad = graphics/Hintergrund/Straße-Vertikal-Unten.png
-Ebene = Hintergrund
+Pfad = graphics/background/streets/Straße-Vertikal-Unten.png
+Ebene = background
 
 [+]
 Bezeichnung = Straße-Kreuzung
-Pfad = graphics/Hintergrund/Straße-Kreuzung.png
-Ebene = Hintergrund
+Pfad = graphics/background/streets/Straße-Kreuzung.png
+Ebene = background
 
 [1]
 Bezeichnung = Gehweg
-Pfad = graphics/Hintergrund/Gehweg.png
-Ebene = Hintergrund
+Pfad = graphics/background/sidewalks/Gehweg.png
+Ebene = background
 
 [a]
 Bezeichnung = Gebäude
-Pfad = graphics/Vordergrund/Gebäude.png
-Ebene = Vordergrund
+Pfad = graphics/foreground/buildings/Gebäude.png
+Ebene = foreground
 
 [b]
 Bezeichnung = Baum
-Pfad = graphics/Vordergrund/Baum.png
-Ebene = Vordergrund
+Pfad = graphics/foreground/trees/Baum.png
+Ebene = foreground
 
 [c]
 Bezeichnung = S-Bahnstation
-Pfad = graphics/Vordergrund/S-Bahnstation.png
-Ebene = Vordergrund
+Pfad = graphics/foreground/trainstations/S-Bahnstation.png
+Ebene = foreground
 

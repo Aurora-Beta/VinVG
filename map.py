@@ -9,8 +9,8 @@ MAP_Y = 12
 
 class karte(object):
 	def __init__(self, dateiname):
-		self.tilemap_hintergrund = []
-		self.tilemap_vordergrund = []
+		self.tilemap_background = []
+		self.tilemap_foreground = []
 		self.tilemap_straßenbahn = []
 		self.tilemap_sbahn = []
 		self.tilemap_schwebebahn = []
@@ -18,14 +18,14 @@ class karte(object):
 		self.tilemap_fahrzeuge = []
 		self.kartendatei = "missions/" + dateiname
 
-		self.tilekey_hintergrund = {}
-		self.tilekey_vordergrund = {}
+		self.tilekey_background = {}
+		self.tilekey_foreground = {}
 		self.tilekey_fahrzeuge = {}
 		self.MAP_X = 12
 		self.MAP_Y = 12
 		
-		self.Hintergrund = graph.Graph(self.MAP_X, self.MAP_X)
-		self.Vordergrund = graph.Graph(self.MAP_X, self.MAP_X)
+		self.background = graph.Graph(self.MAP_X, self.MAP_X)
+		self.foreground = graph.Graph(self.MAP_X, self.MAP_X)
 
 	# Umrechnung von kartesischen Koordinaten in isometrische.
 	def cart2iso(self, übergabe):
@@ -48,10 +48,10 @@ class karte(object):
 		""" Tilemap wird aus Kartendatei geladen. """
 		parser = configparser.ConfigParser()
 		parser.read(os.path.relpath(self.kartendatei, start=os.curdir))
-		if(ebene == "Hintergrund"):
-			rückgabe = parser.get("hintergrund", "hintergrund").split("\n")
-		if(ebene == "Vordergrund"):
-			rückgabe = parser.get("vordergrund", "vordergrund").split("\n")
+		if(ebene == "background"):
+			rückgabe = parser.get("background", "background").split("\n")
+		if(ebene == "foreground"):
+			rückgabe = parser.get("foreground", "foreground").split("\n")
 		return(rückgabe)
 
 
@@ -61,54 +61,56 @@ class karte(object):
 		Dieses enthält in Zeilen die einzelnen Tile-Symbole.
 		Zusammen mit dem Tile-Key kann man die Karte darstellen"""
 		
-		if(ebene == "Hintergrund"):
-			if(self.tilemap_hintergrund == []):		# Wenn die Karte leer ist, dann ...
-				map = self.load_tilemap(ebene="Hintergrund")
-				self.tilemap_hintergrund = map
-				return(self.tilemap_hintergrund)
+		if(ebene == "background"):
+			if(self.tilemap_background == []):		# Wenn die Karte leer ist, dann ...
+				map = self.load_tilemap(ebene="background")
+				self.tilemap_background = map
+				return(self.tilemap_background)
 			else:
-				return(self.tilemap_hintergrund)
+				return(self.tilemap_background)
 		
-		if(ebene == "Vordergrund"):
-			if(self.tilemap_vordergrund == []):
-				map = self.load_tilemap(ebene="Vordergrund")
-				self.tilemap_vordergrund = map
-				return(self.tilemap_vordergrund)
+		if(ebene == "foreground"):
+			if(self.tilemap_foreground == []):
+				map = self.load_tilemap(ebene="foreground")
+				self.tilemap_foreground = map
+				return(self.tilemap_foreground)
 			else:
-				return(self.tilemap_vordergrund)
+				return(self.tilemap_foreground)
 			
 
 	def init_tilekey(self, parser, ebene=""):
-		if(ebene != "Hintergrund"):
-			self.tilekey_vordergrund["."] = {	"ebene": "Vordergrund",
-												"dateiname": "Transparenz",
-												"bezeichnung": "Transparenz"}
+		if(ebene != "background"):
+			self.tilekey_foreground["."] = {
+				"ebene": "foreground",
+				"dateiname": "Transparenz",
+				"bezeichnung": "Transparenz"}
+
 		parser.read(os.path.relpath(self.kartendatei, start=os.curdir))
 		for abschnitt in parser.sections():
 			if len(abschnitt) == 1:
 				desc = dict(parser.items(abschnitt))		# Alle Eigenschaften
 				for schlüssel in desc:
 					if(desc[schlüssel] == ebene):
-						if(ebene == "Vordergrund"):
-							self.tilekey_vordergrund[abschnitt] = desc
-						if(ebene == "Hintergrund"):
-							self.tilekey_hintergrund[abschnitt] = desc
+						if(ebene == "foreground"):
+							self.tilekey_foreground[abschnitt] = desc
+						if(ebene == "background"):
+							self.tilekey_background[abschnitt] = desc
 
 	def get_tilekey(self, ebene=""):
 		parser = configparser.ConfigParser()
-		if(ebene == "Vordergrund"):
-			if(self.tilekey_vordergrund == {}):
-				self.init_tilekey(parser, ebene="Vordergrund")
-				return(self.tilekey_vordergrund)
+		if(ebene == "foreground"):
+			if(self.tilekey_foreground == {}):
+				self.init_tilekey(parser, ebene="foreground")
+				return(self.tilekey_foreground)
 			else:
-				return(self.tilekey_vordergrund)
+				return(self.tilekey_foreground)
 		
-		if(ebene == "Hintergrund"):
-			if(self.tilekey_hintergrund == {}):
-				self.init_tilekey(parser, ebene="Hintergrund")
-				return(self.tilekey_hintergrund)
+		if(ebene == "background"):
+			if(self.tilekey_background == {}):
+				self.init_tilekey(parser, ebene="background")
+				return(self.tilekey_background)
 			else:
-				return(self.tilekey_hintergrund)
+				return(self.tilekey_background)
 
 class Tile(object):
 	def __init__(self):

@@ -105,19 +105,19 @@ class render(object):
 	#	Graphen / Ebenen
 	#
 
-	def hintergrund(self):
-		""" Rendert den Hintergrund. Wir generieren die Tile-Map und den Tile-Key,
-		um die Hintergrundkarte zu rendern."""
-		tilekey = self.k.get_tilekey(ebene="Hintergrund")
-		tilemap = self.k.get_tilemap(ebene="Hintergrund")
+	def background(self):
+		""" Rendert den background. Wir generieren die Tile-Map und den Tile-Key,
+		um die backgroundkarte zu rendern."""
+		tilekey = self.k.get_tilekey(ebene="background")
+		tilemap = self.k.get_tilemap(ebene="background")
 				
 		self.draw(self.s, tilekey, tilemap)
 
-	def vordergrund(self):
-		""" Rendert den Vordergrund. Wir generieren die Tile-Map und den Tile-Key,
-		um die Hintergrundkarte zu rendern. """
-		tilekey = self.k.get_tilekey(ebene="Vordergrund")
-		tilemap = self.k.get_tilemap(ebene="Vordergrund")
+	def foreground(self):
+		""" Rendert den foreground. Wir generieren die Tile-Map und den Tile-Key,
+		um die backgroundkarte zu rendern. """
+		tilekey = self.k.get_tilekey(ebene="foreground")
+		tilemap = self.k.get_tilemap(ebene="foreground")
 		
 		self.draw(self.s, tilekey, tilemap)
 
@@ -174,7 +174,7 @@ class render(object):
 		for Haltestelle in Linien:
 			print("TEST")
 
-	def fahrzeuge(self):
+	def vehicles(self):
 		# Autos auslesen, berechnen und darstellen
 		# Spielerfahrzeuge-Liste auslesen und jedes Fahrzeug durchgehen
 		None

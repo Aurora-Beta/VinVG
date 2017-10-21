@@ -4,13 +4,13 @@ import pygame
 import os
 from pygame.locals import *
 
-class menü(object):
+class menu(object):
 	""" Das Menüobjekt. """
 	def __init__(self, screen, renderer, bgcolor="0,0,0"):
 		self.surface = screen
 		self.r = renderer
 		self.bgcolor = bgcolor
-		self.Menühintergrund = self.r.get_image("Menu_Hintergrundbild",	"graphics/Menu/Hintergrund.png")
+		self.Menühintergrund = self.r.get_image("menu_Hintergrundbild",	"graphics/menu/Hintergrund.png")
 		self.Aktuelles_Menü = ""
 		self.Aktuelle_Menükategorie = ""
 		self.Menü_gezeichnet = False
@@ -26,40 +26,45 @@ class menü(object):
 		
 		# Buttons
 		self.Menü_Buttons = []
-		self.Button_Info = Button(			Name="Info", 
-											Pfad="graphics/Menu/Info.png",
-											Position=self.Menü_Position_Knopf_1,
-											Renderer=self.r,
-											Funktion=self.Menü_Info)
+		self.Button_Info = Button(
+					Name="Info", 
+					Pfad="graphics/menu/Info.png",
+					Position=self.Menü_Position_Knopf_1,
+					Renderer=self.r,
+					Funktion=self.Menü_Info)
 									
-		self.Button_Fahrzeuge = Button(		Name="Fahrzeuge",
-											Pfad="graphics/Menu/Fahrzeuge.png",
-											Position=self.Menü_Position_Knopf_2,
-											Renderer=self.r)
+		self.Button_Fahrzeuge = Button(
+						Name="Fahrzeuge",
+						Pfad="graphics/menu/Fahrzeuge.png",
+						Position=self.Menü_Position_Knopf_2,
+						Renderer=self.r)
 										
-		self.Button_Linien = Button(		Name="Linien",
-											Pfad="graphics/Menu/Linien.png",
-											Position=self.Menü_Position_Knopf_3,
-											Renderer=self.r)
+		self.Button_Linien = Button(
+					Name="Linien",
+					Pfad="graphics/menu/Linien.png",
+					Position=self.Menü_Position_Knopf_3,
+					Renderer=self.r)
 										
-		self.Button_Haltestellen = Button(	Name="Haltestellen",
-											Pfad="graphics/Menu/Haltestelle.png",
-											Position=self.Menü_Position_Knopf_4,
-											Renderer=self.r)
+		self.Button_Haltestellen = Button(
+						Name="Haltestellen",
+						Pfad="graphics/menu/Haltestelle.png",
+						Position=self.Menü_Position_Knopf_4,
+						Renderer=self.r)
 		
-		self.Button_Einstellungen = Button(	Name="Einstellungen",
-											Pfad="graphics/Menu/Einstellungen.png",
-											Position=self.Menü_Position_Knopf_5,
-											Renderer=self.r)
+		self.Button_Einstellungen = Button(
+						Name="Einstellungen",
+						Pfad="graphics/menu/Einstellungen.png",
+						Position=self.Menü_Position_Knopf_5,
+						Renderer=self.r)
 		
 		
 		self.add_Button(self.Button_Info,
-						self.Button_Fahrzeuge,
-						self.Button_Linien,
-						self.Button_Einstellungen,
-						self.Button_Haltestellen)
+					self.Button_Fahrzeuge,
+					self.Button_Linien,
+					self.Button_Einstellungen,
+					self.Button_Haltestellen)
 
-	def menü(self):
+	def menu(self):
 		self.surface.blit(self.Menühintergrund, (0, self.Versatz_Y))
 		self.Buttons_Links_malen()
 		self.Menü_Mitte_malen()

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import pygame
 import os
 from pygame.locals import *
@@ -22,7 +23,7 @@ FPSCLOCK = pygame.time.Clock()
 
 k = map.karte("Testlevel1.map")
 r = render.render(k, DISPLAYSURF)
-m = menu.menü(DISPLAYSURF, r)
+m = menu.menu(DISPLAYSURF, r)
 s = player.player()
 
 
@@ -62,9 +63,9 @@ while True:
 				print("Click at " + str(k.cart2iso(pos)))
 
 
-	r.hintergrund()					# Hintergrund malen
-	r.vordergrund()					# Vordergrund = Gebäude malen
-	r.fahrzeuge()					# Fahrzeuge malen
-	m.menü() 						# Menü
+	r.background()					# Hintergrund malen
+	r.foreground()					# Vordergrund = Gebäude malen
+	r.vehicles()					# Fahrzeuge malen
+	m.menu() 						# Menü
 	pygame.display.update()
 	FPSCLOCK.tick(30) 				# Frames pro Sekunde (FPS)
